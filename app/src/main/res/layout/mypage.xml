@@ -26,8 +26,10 @@
             android:layout_marginRight="35dp"
             android:layout_marginBottom="4dp"
             android:background="#719E71"
+            android:fontFamily="@font/nanumgothiccoding_regular"
             android:text="Plogging App"
-            android:textAlignment="center"></TextView>
+            android:gravity="center">
+        </TextView>
 
         <ImageView
             android:layout_width="60dp"
@@ -37,10 +39,146 @@
             android:src="@drawable/user" />
     </LinearLayout>
 
+    <!--'sohenney' My Page 요소 xml 추가-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="573dp"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/mypage"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="My Page"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="로그인 및 회원가입"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider0"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="회원 정보"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="알림 설정"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="공지사항 및 업데이트 소식"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="회원 탈퇴"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="?android:attr/listDivider" />
     </LinearLayout>
 
     <LinearLayout
