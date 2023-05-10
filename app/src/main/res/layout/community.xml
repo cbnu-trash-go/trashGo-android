@@ -36,54 +36,138 @@
             android:layout_marginTop="10dp"
             android:src="@drawable/user" />
     </LinearLayout>
-
+    <!--'sohenney' community 요소 xml 추가-->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="573dp"
         android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/community"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="COMMUNITY"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="제목(하드)"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content1"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/nanumgothiccoding_regular"
+            android:text="내용(하드)"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="?android:attr/listDivider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/nanumgothiccoding_regular"
+                android:text="제목(하드)"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content2"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/nanumgothiccoding_regular"
+            android:text="내용(하드)"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/nanumgothiccoding_regular"
+            android:text="제목(하드)"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/content3"
+            android:layout_width="250dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/nanumgothiccoding_regular"
+            android:text="내용(하드)"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+
     </LinearLayout>
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#719E71">
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="?android:attr/listDivider" />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="35dp"
-            android:src="@drawable/home"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/map"
-            />
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/rank"/>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="55dp"
-            android:layout_marginRight="35dp"
-            android:src="@drawable/comu" />
 
     </LinearLayout>
 
-</LinearLayout>
 
 
 
