@@ -37,10 +37,127 @@
             android:src="@drawable/user" />
     </LinearLayout>
 
+    <!-- 가운데 레이아웃 큰틀 -->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="573dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="14">
+
+        <!-- 랭크 글자를 넣을 텍스트 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Rank"
+            android:textSize="30dp"
+            android:layout_weight="2"
+            android:gravity="center"/>
+
+        <!-- 1위 레이아웃-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <!-- 등수-->
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:textSize="65dp"
+                android:text="1"
+                android:paddingRight="30dp"
+                android:layout_marginTop="20dp">
+            </TextView>
+            <!-- 유저프로필이미지-->
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="15dp"></Button>
+
+            <!-- 유저닉네임-->
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="80dp"
+                android:text="USER1"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:textSize="45dp"></TextView>
+
+        </LinearLayout>
+
+        <!-- 1위 레이아웃-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <!-- 등수-->
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:textSize="65dp"
+                android:text="1"
+                android:paddingRight="30dp"
+                android:layout_marginTop="20dp">
+            </TextView>
+            <!-- 유저프로필이미지-->
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="15dp"></Button>
+
+            <!-- 유저닉네임-->
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="80dp"
+                android:text="USER1"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:textSize="45dp"></TextView>
+
+        </LinearLayout>
+
+        <!-- 1위 레이아웃-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <!-- 등수-->
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:textSize="65dp"
+                android:text="1"
+                android:paddingRight="30dp"
+                android:layout_marginTop="20dp">
+            </TextView>
+            <!-- 유저프로필이미지-->
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="15dp"></Button>
+
+            <!-- 유저닉네임-->
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="80dp"
+                android:text="USER1"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:textSize="45dp"></TextView>
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
