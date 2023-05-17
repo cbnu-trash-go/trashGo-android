@@ -16,6 +16,13 @@
         android:theme="@style/Theme.Trashgoandroid"
         tools:targetApi="31">
         <activity
+            android:name=".CommunityActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MyploggingdataActivity"
             android:exported="false">
             <meta-data
@@ -32,9 +39,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        
-        <!--sohenney login.java, signup.java 연동-->
+        </activity> <!-- sohenney login.java, signup.java 연동 -->
         <activity
             android:name=".activity_login"
             android:exported="false">
