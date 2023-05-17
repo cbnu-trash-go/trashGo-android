@@ -69,6 +69,7 @@
             android:layout_marginTop="40dp">
 
             <TextView
+                android:id="@+id/txtlogin"
                 android:layout_width="250dp"
                 android:layout_height="30dp"
                 android:fontFamily="@font/nanumgothiccoding_regular"
@@ -93,6 +94,7 @@
 >
 
             <TextView
+                android:id="@+id/txtuserinform"
                 android:layout_width="150dp"
                 android:layout_height="30dp"
                 android:fontFamily="@font/nanumgothiccoding_regular"
@@ -116,6 +118,7 @@
             android:layout_height="30dp">
 
             <TextView
+                android:id="@+id/notification"
                 android:layout_width="150dp"
                 android:layout_height="30dp"
                 android:fontFamily="@font/nanumgothiccoding_regular"
@@ -139,6 +142,7 @@
             android:layout_height="30dp">
 
             <TextView
+                android:id="@+id/noticeupdate"
                 android:layout_width="350dp"
                 android:layout_height="30dp"
                 android:fontFamily="@font/nanumgothiccoding_regular"
@@ -162,6 +166,7 @@
             android:layout_height="30dp">
 
             <TextView
+                android:id="@+id/withdrawal"
                 android:layout_width="150dp"
                 android:layout_height="30dp"
                 android:fontFamily="@font/nanumgothiccoding_regular"
