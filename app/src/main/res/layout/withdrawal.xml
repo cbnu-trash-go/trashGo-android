@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <?xml version="1.0" encoding="utf-8"?>
 
-    <!--sohenney 커뮤니티 탭 추가-->
+    <!--sohenney 공지사항 및 업데이트 소식 탭 추가-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -22,10 +22,10 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/communitytitle"
+                    android:id="@+id/withdrawaltitle"
                     android:layout_width="300dp"
                     android:layout_height="40dp"
-                    android:text="COMMUNITY"
+                    android:text="Withdrawal"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="30dp"
@@ -36,45 +36,39 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
                 android:padding="16dp"
-                android:orientation="vertical">
+                android:layout_marginTop="40dp">
 
                 <TextView
-                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="회원 탈퇴"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnwithdrawal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="40dp"
-                    android:text="제목(하드)"/>
+                    android:text="탈퇴하기"
+                    android:background="#4CAF50" /> <!--추후 색상 변경-->
 
                 <TextView
-                    android:id="@+id/content2"
-                    android:layout_width="355dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginLeft="15dp"
-                    android:text="내용(하드)"/>
+                    android:text="경고: ~~~" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:background="?android:attr/listDivider" />
             </LinearLayout>
-
 
 
         </LinearLayout>
 
 
+
     </LinearLayout>
-
-
 
 
 </LinearLayout>
