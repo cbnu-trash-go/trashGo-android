@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="탈퇴하기"
-                    android:background="#4CAF50" /> <!--추후 색상 변경-->
+                    android:background="@color/teal_700" /> <!--추후 색상 변경-->
 
                 <TextView
                     android:layout_width="match_parent"
