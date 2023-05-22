@@ -53,14 +53,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="공지사항 1"
-                    android:background="#4CAF50" /> <!--추후 색상 변경-->
+                    android:background="@color/teal_700" /> <!--추후 색상 변경-->
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnnotice2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="공지사항 2"
-                    android:background="#4CAF50" /> <!--추후 색상 변경-->
+                    android:background="@color/teal_700" /> <!--추후 색상 변경-->
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,14 +77,14 @@
                     android:layout_height="wrap_content"
                     android:text="업데이트 소식 1"
                     android:layout_marginBottom="10dp"
-                    android:background="#4CAF50" /> <!--추후 색상 변경-->
+                    android:background="@color/teal_700" /> <!--추후 색상 변경-->
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnupdate2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="업데이트 소식 2"
-                    android:background="#4CAF50" /> <!--추후 색상 변경-->
+                    android:background="@color/teal_700" /> <!--추후 색상 변경-->
             </LinearLayout>
 
 
