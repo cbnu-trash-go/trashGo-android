@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+//주원
+
 public class MainActivity extends AppCompatActivity {
     ImageButton imageView1;
     @Override
