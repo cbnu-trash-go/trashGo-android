@@ -19,10 +19,6 @@ public class activity_signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        //뒤로 가기 버튼
-        back = findViewById(R.id.back);
-        back.setOnClickListener(v -> onBackPressed() );
-
         //기입 항목
         name = findViewById(R.id.signName);
         id=findViewById(R.id.signID);
