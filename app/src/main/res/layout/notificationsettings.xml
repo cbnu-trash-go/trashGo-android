@@ -58,13 +58,8 @@
                     android:id="@+id/btnbrrr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
                     android:text="진동" />
-
-                <Switch
-                    android:id="@+id/btnled"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="LED" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -72,8 +67,10 @@
                     android:text="알림음 선택" />
 
                 <Spinner
+                    android:id="@+id/ringtone_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -81,8 +78,9 @@
                     android:text="진동 패턴 선택" />
 
                 <Spinner
+                    android:id="@+id/vibration_pattern_spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="30dp" />
             </LinearLayout>
 
         </LinearLayout>

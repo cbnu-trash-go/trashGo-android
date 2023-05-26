@@ -6,6 +6,7 @@
         android:anyDensity="true"
         android:largeScreens="true" />
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -93,4 +94,7 @@
 
     </application>
 
+    <!--sohenney 알림설정에 필요한 접근 권한 추가-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 </manifest>
