@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.trashgo.app.fragment.CommunityFragment;
 import com.trashgo.app.fragment.FirstFragment;
 import com.trashgo.app.fragment.MapsFragment;
 import com.trashgo.app.fragment.RankFragment;
@@ -23,7 +24,7 @@ import com.trashgo.app.fragment.TreeFragment;
  * bottomNavigation(하단 메뉴바) 적용 - pkdgood
  */
 public class MainActivity extends AppCompatActivity {
-    private Fragment firstFragment, secondFragment, treeFragment, mapsFragment, rankFragment;
+    private Fragment firstFragment, secondFragment, treeFragment, mapsFragment, rankFragment, communityFragment;
 
     FrameLayout frameLayout;
     BottomNavigationView bottomNavigationView;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         treeFragment = new TreeFragment();
         mapsFragment = new MapsFragment();
         rankFragment = new RankFragment();
+        communityFragment = new CommunityFragment();
 
 
         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, treeFragment).commit();
@@ -65,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.navi_3:
                         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, rankFragment).commit();
+                        return true;
+                    case R.id.navi_4:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, communityFragment).commit();
                         return true;
                 }
                 return false;
