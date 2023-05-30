@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.trashgo.app.fragment.FirstFragment;
+import com.trashgo.app.fragment.MapsFragment;
 import com.trashgo.app.fragment.SecondFragment;
 import com.trashgo.app.fragment.TreeFragment;
 
@@ -21,7 +22,7 @@ import com.trashgo.app.fragment.TreeFragment;
  * bottomNavigation(하단 메뉴바) 적용 - pkdgood
  */
 public class MainActivity extends AppCompatActivity {
-    private Fragment firstFragment, secondFragment, treeFragment;
+    private Fragment firstFragment, secondFragment, treeFragment, mapsFragment;
 
     FrameLayout frameLayout;
     BottomNavigationView bottomNavigationView;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         firstFragment = new FirstFragment();
         secondFragment = new SecondFragment();
         treeFragment = new TreeFragment();
+        mapsFragment = new MapsFragment();
 
 
         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, treeFragment).commit();
@@ -54,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navi_1:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, firstFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, treeFragment).commit();
                         return true;
                     case R.id.navi_2:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, secondFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, mapsFragment).commit();
                         return true;
                     case R.id.navi_3:
                         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, treeFragment).commit();
