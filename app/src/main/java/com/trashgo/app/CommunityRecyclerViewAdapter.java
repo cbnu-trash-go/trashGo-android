@@ -10,52 +10,43 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
+
 /*by dotom*/
 public class CommunityRecyclerViewAdapter extends RecyclerView.Adapter<CommunityRecyclerViewAdapter.ViewHolder> {
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_Title_item;
-        TextView txt_Content_item;
-
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            txt_Title_item = (TextView) itemView.findViewById(R.id.title);
-            txt_Content_item = (TextView) itemView.findViewById(R.id.content);
-        }
+    private ArrayList<CommunityRecyclerItem> mList = new ArrayList<>();
+    public CommunityRecyclerViewAdapter(ArrayList<CommunityRecyclerItem> m){
+        this.mList = m;
     }
 
-    private ArrayList<CommunityRecyclerItem> mList = null;
-
-    public CommunityRecyclerViewAdapter(ArrayList<CommunityRecyclerItem> mList) {
-        this.mList = mList;
-    }
-
-    // 아이템 뷰를 위한 뷰홀더 객체를 생성하여 리턴
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        View view = inflater.inflate(R.layout.community_recycler_item, parent, false);
-        CommunityRecyclerViewAdapter.ViewHolder vh = new CommunityRecyclerViewAdapter.ViewHolder(view);
-        return vh;
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_community, parent, false);
+        return new ViewHolder(v);
     }
 
-    // position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시
     @Override
-    public void onBindViewHolder(@NonNull CommunityRecyclerViewAdapter.ViewHolder holder, int position) {
-        CommunityRecyclerItem item = mList.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.item_title.setText(mList.get(position).getTitle());
+        holder.item_content.setText(mList.get(position).getTitle());
 
-        holder.txt_Title_item.setText(item.getTitle());
-        holder.txt_Content_item.setText(item.getContent());
     }
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return 0;
     }
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        private TextView item_title;
+        private TextView item_content;
 
+
+        public ViewHolder(@NonNull View itemView){
+            super(itemView);
+            item_title = (TextView)itemView.findViewById(R.id.title);
+            item_content = (TextView)itemView.findViewById(R.id.content);
+        }
+    }
 
 }
