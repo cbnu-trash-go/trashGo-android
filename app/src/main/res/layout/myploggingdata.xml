@@ -9,38 +9,6 @@
     android:weightSum="20"
 
     >
-    <!--This xml designed by dotom-->
-    <LinearLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="#719E71">
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/tree" />
-
-        <TextView
-            android:id="@+id/editText"
-            android:layout_width="165dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="35dp"
-            android:layout_marginBottom="4dp"
-            android:background="#719E71"
-            android:text="Plogging App"
-            android:textAlignment="center"></TextView>
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/user" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -192,46 +160,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#719E71">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="35dp"
-            android:src="@drawable/home"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/map"
-            />
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="50dp"
-            android:src="@drawable/rank"/>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="55dp"
-            android:layout_marginRight="35dp"
-            android:src="@drawable/comu" />
-
     </LinearLayout>
 
 </LinearLayout>
