@@ -110,6 +110,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <!--sohenney LoadingActivity 등록-->
+        <activity android:name=".LoadingActivity"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
     </application>
 
 </manifest>
