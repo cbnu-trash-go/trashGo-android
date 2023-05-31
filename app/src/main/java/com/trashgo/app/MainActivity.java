@@ -16,11 +16,9 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.trashgo.app.fragment.CommunityFragment;
-import com.trashgo.app.fragment.FirstFragment;
 import com.trashgo.app.fragment.MapsFragment;
 import com.trashgo.app.fragment.MyPageFragment;
 import com.trashgo.app.fragment.RankFragment;
-import com.trashgo.app.fragment.SecondFragment;
 import com.trashgo.app.fragment.TreeFragment;
 
 //주원
@@ -29,7 +27,7 @@ import com.trashgo.app.fragment.TreeFragment;
  * bottomNavigation(하단 메뉴바) 적용 - pkdgood
  */
 public class MainActivity extends AppCompatActivity {
-    private Fragment firstFragment, secondFragment, treeFragment, mapsFragment, rankFragment, communityFragment, myPageFragment;
+    private Fragment treeFragment, mapsFragment, rankFragment, communityFragment, myPageFragment;
 
     FrameLayout frameLayout;
     BottomNavigationView bottomNavigationView;
@@ -51,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnavi);
         frameLayout = (FrameLayout) findViewById(R.id.framelayout);
 
-        firstFragment = new FirstFragment();
-        secondFragment = new SecondFragment();
         treeFragment = new TreeFragment();
         mapsFragment = new MapsFragment();
         rankFragment = new RankFragment();
