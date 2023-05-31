@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.content.Intent;
 import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +22,8 @@ import com.trashgo.app.fragment.MapsFragment;
 import com.trashgo.app.fragment.MyPageFragment;
 import com.trashgo.app.fragment.RankFragment;
 import com.trashgo.app.fragment.TreeFragment;
+
+import java.nio.channels.InterruptedByTimeoutException;
 
 //주원
 
@@ -37,11 +41,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // sohenney Loading 화면 띄우기
+        Intent intent = new Intent(this, LoadingActivity.class);
+        startActivity(intent);
+
         // sohenney '방해 금지' 모드 권한 확인
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             if (!notificationManager.isNotificationPolicyAccessGranted()) {
-                Intent intent = new Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
+                intent = new Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
                 startActivity(intent);
             }
         }
