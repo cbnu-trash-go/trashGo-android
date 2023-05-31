@@ -1,9 +1,8 @@
 package com.trashgo.app;
-/*by dotom*/
+/** By dotom*/
 public class CommunityRecyclerItem {
     private String mTitle;
     private String mContent;
-
     public String getTitle() {
         return mTitle;
     }

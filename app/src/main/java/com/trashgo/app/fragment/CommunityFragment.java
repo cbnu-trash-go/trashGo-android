@@ -18,11 +18,13 @@ import com.trashgo.app.MyCommunityRecyclerViewAdapter;
 import com.trashgo.app.R;
 import com.trashgo.app.placeholder.PlaceholderContent;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 /**
  * A fragment representing a list of Items.
  */
+/** 커뮤니티 By dotom*/
 public class CommunityFragment extends Fragment {
 
     // TODO: Customize parameter argument names
@@ -32,7 +34,7 @@ public class CommunityFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private ArrayList<CommunityRecyclerItem> mList;
-    private CommunityRecyclerViewAdapter mRecyclerViewAdapter;
+    private MyCommunityRecyclerViewAdapter mRecyclerViewAdapter;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -59,31 +61,30 @@ public class CommunityFragment extends Fragment {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
 
-        mList = new ArrayList<>();
-        for(int i=0;i<10;i++){
-            addItem("Title"+i, "Content"+i);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_community_list, container, false);
 
         // Set the adapter
-        if (view instanceof RecyclerView) {
-            Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
-            recyclerView.setAdapter(new MyCommunityRecyclerViewAdapter(mList));
+
+        mList = new ArrayList<>();
+        for(int i=0;i<10;i++){
+            addItem("Title"+i, "Content"+i);
         }
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.list);
+        mRecyclerViewAdapter = new MyCommunityRecyclerViewAdapter(mList);
+        mRecyclerView.setAdapter(mRecyclerViewAdapter);
+        //mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
         return view;
     }
-
+    /** By dotom*/
     public void addItem(String title, String content){
         CommunityRecyclerItem item = new CommunityRecyclerItem();
 
