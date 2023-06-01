@@ -13,6 +13,11 @@ android:layout_height="match_parent">
     android:weightSum="20">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical">
@@ -36,7 +41,7 @@ android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="680dp"
+            android:layout_height="473dp"
             android:orientation="vertical"
             android:padding="16dp">
 
@@ -44,14 +49,40 @@ android:layout_height="match_parent">
                 android:id="@+id/list"
                 android:name="com.trashgo.app.CommunityFragment"
                 android:layout_width="379dp"
-                android:layout_height="532dp"
+                android:layout_height="432dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 app:layoutManager="LinearLayoutManager"
                 tools:context=".fragment.CommunityFragment"
                 tools:listitem="@layout/fragment_community" />
+
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+<View
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_weight="10"
+    />
+
+            <Button
+
+                android:id="@+id/writebutton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="+"
+                android:textSize="50dp"
+                android:background="@drawable/solid_button"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
 
 
     </LinearLayout>

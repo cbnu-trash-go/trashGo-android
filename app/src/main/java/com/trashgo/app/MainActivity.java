@@ -15,9 +15,12 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.trashgo.app.fragment.CommunityFragment;
+import com.trashgo.app.fragment.ComuWriteFragment;
 import com.trashgo.app.fragment.MapsFragment;
 import com.trashgo.app.fragment.MyPageFragment;
 import com.trashgo.app.fragment.RankFragment;
@@ -31,7 +34,7 @@ import java.nio.channels.InterruptedByTimeoutException;
  * bottomNavigation(하단 메뉴바) 적용 - pkdgood
  */
 public class MainActivity extends AppCompatActivity {
-    private Fragment treeFragment, mapsFragment, rankFragment, communityFragment, myPageFragment;
+    private Fragment treeFragment, mapsFragment, rankFragment, communityFragment, myPageFragment, comuwriteFragment;
 
     FrameLayout frameLayout;
     BottomNavigationView bottomNavigationView;
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         rankFragment = new RankFragment();
         communityFragment = new CommunityFragment();
         myPageFragment = new MyPageFragment();
+        comuwriteFragment = new ComuWriteFragment();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, treeFragment).commit();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -89,6 +93,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+    /**
+     *  fragment->fragment 이동을 하고 싶으면 밑에 인덱스 차례대로 추가해서 넣으세요
+     *  by dotom
+     */
+    public void fragmentChange(int index){
+        if(index == 1){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.framelayout, comuwriteFragment).commit();
+        }
+
+    }
+
     public void mytreeClick(View v) {
         Intent intent = new Intent(MainActivity.this, MyploggingdataActivity.class);
         startActivity(intent);

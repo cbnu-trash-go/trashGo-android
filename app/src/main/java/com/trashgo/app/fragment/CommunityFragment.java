@@ -11,9 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.trashgo.app.CommunityRecyclerItem;
 import com.trashgo.app.CommunityRecyclerViewAdapter;
+import com.trashgo.app.MainActivity;
 import com.trashgo.app.MyCommunityRecyclerViewAdapter;
 import com.trashgo.app.R;
 import com.trashgo.app.placeholder.PlaceholderContent;
@@ -35,7 +37,8 @@ public class CommunityFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private ArrayList<CommunityRecyclerItem> mList;
     private MyCommunityRecyclerViewAdapter mRecyclerViewAdapter;
-
+    MainActivity mainActivity;
+    Button writebutton;
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -64,6 +67,18 @@ public class CommunityFragment extends Fragment {
 
     }
 
+    /**
+     * by dotom
+     */
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        mainActivity = (MainActivity) getActivity();
+    }
+
+    /**
+     * by dotom
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -79,9 +94,16 @@ public class CommunityFragment extends Fragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.list);
         mRecyclerViewAdapter = new MyCommunityRecyclerViewAdapter(mList);
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
+
+        writebutton = view.findViewById(R.id.writebutton);
         //mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
+        writebutton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                mainActivity.fragmentChange(1);
+            }
+        });
         return view;
     }
     /** By dotom*/
@@ -93,4 +115,5 @@ public class CommunityFragment extends Fragment {
 
         mList.add(item);
     }
+
 }
