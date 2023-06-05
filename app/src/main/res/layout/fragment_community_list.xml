@@ -6,6 +6,7 @@
 android:layout_height="match_parent">
 
 <!--sohenney 커뮤니티 탭 추가/dotom recyclerview 수정-->
+    <!--sohenney 버튼 디자인 크기 수정 -->
 <LinearLayout
     android:orientation="vertical"
     android:layout_width="fill_parent"
@@ -74,7 +75,7 @@ android:layout_height="match_parent">
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:text="+"
-                android:textSize="50dp"
+                android:textSize="40dp"
                 android:background="@drawable/solid_button"
                 />
             <View
