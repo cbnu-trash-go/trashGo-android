@@ -15,18 +15,13 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.trashgo.app.fragment.CommunityFragment;
 import com.trashgo.app.fragment.ComuWriteFragment;
 import com.trashgo.app.fragment.MapsFragment;
 import com.trashgo.app.fragment.MyPageFragment;
-import com.trashgo.app.fragment.RankFragment;
 import com.trashgo.app.fragment.TreeFragment;
-
-import java.nio.channels.InterruptedByTimeoutException;
 
 //주원
 
@@ -34,7 +29,7 @@ import java.nio.channels.InterruptedByTimeoutException;
  * bottomNavigation(하단 메뉴바) 적용 - pkdgood
  */
 public class MainActivity extends AppCompatActivity {
-    private Fragment treeFragment, mapsFragment, rankFragment, communityFragment, myPageFragment, comuwriteFragment;
+    private Fragment treeFragment, mapsFragment, communityFragment, myPageFragment, comuwriteFragment;
 
     FrameLayout frameLayout;
     BottomNavigationView bottomNavigationView;
@@ -62,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
 
         treeFragment = new TreeFragment();
         mapsFragment = new MapsFragment();
-        rankFragment = new RankFragment();
         communityFragment = new CommunityFragment();
         myPageFragment = new MyPageFragment();
         comuwriteFragment = new ComuWriteFragment();
@@ -79,12 +73,9 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, mapsFragment).commit();
                         return true;
                     case R.id.navi_3:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, rankFragment).commit();
-                        return true;
-                    case R.id.navi_4:
                         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, communityFragment).commit();
                         return true;
-                    case R.id.navi_5:
+                    case R.id.navi_4:
                         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, myPageFragment).commit();
                         return true;
                 }
