@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 import com.trashgo.app.R;
 
@@ -19,6 +22,10 @@ public class TreeFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    //
+    private ViewFlipper v_fllipper;
+    //
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -46,19 +53,50 @@ public class TreeFragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        int images[]={
+                R.drawable.sprout,
+                R.drawable.growingtree,
+                R.drawable.growingtree2,
+                R.drawable.growingtree3,
+                R.drawable.treemain
+        };
+
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        for(int image:images){
+            fllipperImages(image);
+        }
     }
 
+
+    public void fllipperImages(int image) {
+        ImageView imageView = new ImageView(getContext());
+        imageView.setBackgroundResource(image);
+
+        v_fllipper.addView(imageView);      // 이미지 추가
+        v_fllipper.setFlipInterval(4000);       // 자동 이미지 슬라이드 딜레이시간(1000 당 1초)
+        v_fllipper.setAutoStart(true);          // 자동 시작 유무 설정
+        // animation
+        v_fllipper.setInAnimation(getContext(),android.R.anim.slide_in_left);
+        v_fllipper.setOutAnimation(getContext(),android.R.anim.slide_out_right);
+
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_tree, container, false);
     }
 
