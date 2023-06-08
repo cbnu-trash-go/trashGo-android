@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.content.Intent;
 import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.View;
@@ -118,6 +116,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void withdrawalClick(View v) {
         Intent intent = new Intent(MainActivity.this, activity_withdrawal.class);
+        startActivity(intent);
+    }
+
+    public void ploggingStartClick(View v) {
+        Intent intent = new Intent(MainActivity.this, PloggingActivity.class);
         startActivity(intent);
     }
 }
