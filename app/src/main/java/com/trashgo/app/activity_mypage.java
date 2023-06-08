@@ -63,7 +63,7 @@ public class activity_mypage extends AppCompatActivity {
         noticeupdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_mypage.this, activity_noticeupdate.class);
+                Intent intent = new Intent(activity_mypage.this, NoticeUpdateActivity.class);
                 startActivity(intent);
             }
         });
