@@ -88,9 +88,14 @@ public class CommunityFragment extends Fragment {
         // Set the adapter
 
         mList = new ArrayList<>();
-        for(int i=0;i<10;i++){
-            addItem("Title"+i, "Content"+i);
-        }
+        addItem("6월 플로깅 같이 하실 분 구합니다", "플로깅 같이 하실 분 구합니다. 현재 2명 모여있습니다! 연락 주세요. ...");
+        addItem("플로깅 장소 추천", "이번에 충북대학교에 플로깅을 하러 다녀왔는데 학교가 널찍하니 좋더라고요. 추천합니다! ...");
+        addItem("분리수거 어떻게 하시나요?", "분리수거 하려고 하는데 도통 뭐가 뭔지를 잘 모르겠네요.. 다들 어떤 식으로 알 ...");
+        addItem("청주) 플로깅 조끼 나눔합니다.", "플로깅 할 때 입고 다니려고 맞춘 조끼가 여러개 있는데, 무료 나눔합니다! 연락주 ...");
+        addItem("6월 9일에 한강 플로깅 하려 하는데 오실 분 계신가요?", "한강에서 밤에 해 지고 시원해지면 플로깅 좀 하려고 합니다 ...");
+        addItem("플로깅 장소 추천해주세요.", "건강이랑 환경 좀 돌볼겸 플로깅 해보려 하는데 어디가 좋나요? 처음이 ...");
+
+
         mRecyclerView = (RecyclerView) view.findViewById(R.id.list);
         mRecyclerViewAdapter = new MyCommunityRecyclerViewAdapter(mList);
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
