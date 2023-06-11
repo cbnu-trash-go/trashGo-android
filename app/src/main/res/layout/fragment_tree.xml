@@ -60,7 +60,6 @@
             android:text="Tap Tree Check My Data"
             android:textColor="#000000"
             android:textSize="24sp" />
-
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
@@ -78,6 +77,11 @@
             android:text="Button"
             android:textColor="#651FFF"
             android:textSize="24sp" />
+        <Button
+            android:id="@+id/aibutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ai분리수거" />
     </LinearLayout>
 
 </FrameLayout>
