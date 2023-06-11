@@ -95,9 +95,9 @@ public class MapsFragment extends Fragment {
                 );
 
 //                latLngList.get(0);
-                googleMap.addMarker(new MarkerOptions().position(latLngList.get(0)).title("시작"));
-                googleMap.addMarker(new MarkerOptions().position(latLngList.get(latLngList.size()-1)).title("종료"));
-                googleMap.addPolyline(new PolylineOptions().add(arr));
+//                googleMap.addMarker(new MarkerOptions().position(latLngList.get(0)).title("시작"));
+//                googleMap.addMarker(new MarkerOptions().position(latLngList.get(latLngList.size()-1)).title("종료"));
+//                googleMap.addPolyline(new PolylineOptions().add(arr));
             }
         }
     };

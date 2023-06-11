@@ -45,7 +45,7 @@ public class PloggingActivity extends AppCompatActivity {
 
     Intent intent;
 
-//    private FusedLocationProviderClient fusedLocationClient;
+    private FusedLocationProviderClient fusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +66,13 @@ public class PloggingActivity extends AppCompatActivity {
         tv3 = findViewById(R.id.textView3);
 
         ploggingData = new PloggingData();
-//        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         String[] permission = {
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 android.Manifest.permission.READ_EXTERNAL_STORAGE,
                 android.Manifest.permission.MANAGE_EXTERNAL_STORAGE,
-                android.Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.MANAGE_MEDIA
+                android.Manifest.permission.ACCESS_FINE_LOCATION
         };
         if ((ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
@@ -83,14 +82,14 @@ public class PloggingActivity extends AppCompatActivity {
         }
 
         // fusedLocationClient 사용
-//        fusedLocationClient.getLastLocation()
-//                .addOnSuccessListener(this, location -> {
-//                    // Got last known location. In some rare situations this can be null.
-//                    if (location != null) {
-//                        LatLng mLatLng = new LatLng(location.getLatitude(), location.getLongitude());
-//                        Log.println(Log.INFO, "위치", mLatLng.toString());
-//                    }
-//                });
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, location -> {
+                    // Got last known location. In some rare situations this can be null.
+                    if (location != null) {
+                        LatLng mLatLng = new LatLng(location.getLatitude(), location.getLongitude());
+                        Log.println(Log.INFO, "위치", mLatLng.toString());
+                    }
+                });
 
 
         // LocationManager 사용
@@ -101,6 +100,7 @@ public class PloggingActivity extends AppCompatActivity {
     }
 
     final LocationListener gpsLocationListener = new LocationListener() {
+        @Override
         public void onLocationChanged(Location location) {
 
             String provider = location.getProvider();
