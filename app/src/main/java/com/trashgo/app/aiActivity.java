@@ -262,6 +262,10 @@ public class aiActivity extends AppCompatActivity implements Runnable {
             mResultView.invalidate();
             mResultView.setVisibility(View.VISIBLE);
 
+
+            /**
+             * by dotom
+             */
             String ad = "";
 
             for(int i=0; i<mResultView.mResults.size(); i++){

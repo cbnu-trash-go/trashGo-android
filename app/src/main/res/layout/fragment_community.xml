@@ -11,10 +11,11 @@
         android:layout_height="wrap_content">
         <!--by dotom-->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="379dp"
-            android:layout_height="150dp"
+            android:layout_width="367dp"
+            android:layout_height="183dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
@@ -23,6 +24,7 @@
                 android:id="@+id/title"
                 android:layout_width="334dp"
                 android:layout_height="31dp"
+                android:layout_marginBottom="10dp"
                 android:text="제목(하드)"
                 android:textColor="@color/black"
                 android:textSize="25dp"
@@ -38,6 +40,7 @@
                 android:id="@+id/content"
                 android:layout_width="355dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="내용(하드)"
                 android:textColor="@color/black"
                 android:textSize="20dp"
