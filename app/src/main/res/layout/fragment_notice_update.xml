@@ -97,11 +97,23 @@
                     android:id="@+id/btnupdate2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="        PLOPLO 앱 인공지능 도입 업데이트 예정"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/solid_button"
+                    android:gravity=""
+                    android:text="        PLOPLO 앱 인공지능 도입 업데이트 예정"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:gravity=""/>
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnupdate3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/solid_button"
+                    android:gravity=""
+                    android:text="        분리수거 정보 사이트"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 

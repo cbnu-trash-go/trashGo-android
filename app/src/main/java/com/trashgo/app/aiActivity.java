@@ -102,6 +102,7 @@ public class aiActivity extends AppCompatActivity implements Runnable {
         mImageView.setImageBitmap(mBitmap);
         mResultView = findViewById(R.id.resultView);
         mResultView.setVisibility(View.INVISIBLE);
+        advice = (TextView) findViewById(R.id.advice);
 
         final Button buttonTest = findViewById(R.id.testButton);
         buttonTest.setText(("Test Image 1/3"));
@@ -187,7 +188,6 @@ public class aiActivity extends AppCompatActivity implements Runnable {
             String line;
             List<String> classes = new ArrayList<>();
 
-            advice = (TextView) findViewById(R.id.advice);
 
             while ((line = br.readLine()) != null) {
                 classes.add(line);
@@ -195,11 +195,10 @@ public class aiActivity extends AppCompatActivity implements Runnable {
             PrePostProcessor.mClasses = new String[classes.size()];
             classes.toArray(PrePostProcessor.mClasses);
 
-            for(int i=0; i<classes.size(); i++){
-                if(classes.get(i).equals("bottle")){
-                    advice.setText("bottle: 라벨을 떼고 부피를 줄여서 종류에 맞게 분리수거 해주세요.");
-                }
-            }
+
+
+
+
         } catch (IOException e) {
             Log.e("Object Detection", "Error reading assets", e);
             finish();
@@ -262,6 +261,34 @@ public class aiActivity extends AppCompatActivity implements Runnable {
             mResultView.setResults(results);
             mResultView.invalidate();
             mResultView.setVisibility(View.VISIBLE);
+
+
+            /**
+             * by dotom
+             */
+            String ad = "";
+
+            for(int i=0; i<mResultView.mResults.size(); i++){
+                String t = PrePostProcessor.mClasses[mResultView.mResults.get(i).classIndex];
+
+                if(t.equals("bottle")){
+                    ad += "bottle: 안을 헹군 후 라벨을 제거 후 부피를 줄여 종류에 맞게 재활용 해주세요.\n";
+                }else if(t.equals("knife")){
+                    ad += "knife: 다치지 않도록 날을 두꺼운 종이에 싸서 종량제봉투에 버리세요.\n";
+                }else if(t.equals("tv")){
+                    ad += "tv: 주민센터, 구청 등을 통해 스티커를 발급받아 버리세요.\n";
+                }else if(t.equals("sport ball")){
+                    ad += "sports ball: 바람을 빼서 부피를 줄인 후 종량제봉투에 버리세요.\n";
+                }else if(t.equals("umbrella")){
+                    ad += "umbrella: 여러 재질이 섞여 있으므로 일반쓰레기로 버려주세요.\n";
+                }else if(t.equals("person")){
+                    ad += "person: 사람을 버리시면 안됩니다.\n";
+                }else if(t.equals("cell phone")){
+                    ad += "cell phone: 모바일 홈페이지(www.15990903.or.kr), 전화(1599-0903)로 배출 예약하십시오\n";
+                }
+            }
+
+            advice.setText(ad);
         });
     }
 }

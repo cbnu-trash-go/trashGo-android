@@ -1,5 +1,7 @@
 package com.trashgo.app.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +9,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.MultiAutoCompleteTextView;
 
+import com.trashgo.app.MainActivity;
 import com.trashgo.app.R;
+import com.trashgo.app.aiActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +37,11 @@ public class ComuWriteFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Button uploadbutton;
+    EditText title;
+    MultiAutoCompleteTextView content;
+    MainActivity mainActivity;
+    static CommunityFragment item = new CommunityFragment();
     public ComuWriteFragment() {
         // Required empty public constructor
     }
@@ -49,7 +61,14 @@ public class ComuWriteFragment extends Fragment {
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
+
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        mainActivity = (MainActivity) getActivity();
     }
 
     @Override
@@ -65,6 +84,27 @@ public class ComuWriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_comuwrite, container, false);
+        View view = inflater.inflate(R.layout.fragment_comuwrite, container, false);
+        uploadbutton = view.findViewById(R.id.uploadbutton);
+        title = view.findViewById(R.id.title);
+        content = view.findViewById(R.id.content);
+        uploadbutton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                item.addItem(title.getText().toString(), content.getText().toString());
+                title.setText("");
+                content.setText("");
+
+                mainActivity.fragmentChange(2);
+
+
+            }
+
+
+
+        });
+
+        return view;
     }
 }
