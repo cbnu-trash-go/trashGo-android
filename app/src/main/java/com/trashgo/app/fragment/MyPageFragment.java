@@ -19,9 +19,7 @@ import com.trashgo.app.activity_profile;
 import com.trashgo.app.activity_withdrawal;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link MyPageFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * 생성 - pkdgood
  */
 public class MyPageFragment extends Fragment {
 

@@ -49,7 +49,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
         ploggingDataRecyclerViewItem item = mList.get(position);
 
-        holder.imgView_item.setImageResource(R.drawable.ic_launcher_background);   // 사진 없어서 기본 파일로 이미지 띄움
+        holder.imgView_item.setImageResource(R.drawable.pic1);
         holder.txt_date.setText(item.getDate());
     }
 
