@@ -14,6 +14,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,9 @@ public class ResultView extends View {
 
     private Paint mPaintRectangle;
     private Paint mPaintText;
-    private ArrayList<Result> mResults;
+    public ArrayList<Result> mResults;
+
+
 
     public ResultView(Context context) {
         super(context);
@@ -41,6 +44,8 @@ public class ResultView extends View {
         mPaintRectangle.setColor(Color.YELLOW);
         mPaintText = new Paint();
     }
+
+
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -63,6 +68,8 @@ public class ResultView extends View {
             mPaintText.setStyle(Paint.Style.FILL);
             mPaintText.setTextSize(32);
             canvas.drawText(String.format("%s %.2f", PrePostProcessor.mClasses[result.classIndex], result.score), result.rect.left + TEXT_X, result.rect.top + TEXT_Y, mPaintText);
+
+
         }
     }
 
