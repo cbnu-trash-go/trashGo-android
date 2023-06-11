@@ -4,31 +4,44 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.trashgo.app.MainActivity;
+import com.trashgo.app.Model.PloggingData;
 import com.trashgo.app.PloggingActivity;
 import com.trashgo.app.R;
 import com.trashgo.app.activity_profile;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 구글맵 추가 - pkdgood
  */
 public class MapsFragment extends Fragment {
 
+    String ploggingDataStr = null;
+    PloggingData ploggingData = null;
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
@@ -42,16 +55,63 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
+            if(ploggingDataStr!=null) {
+                ObjectMapper om = new ObjectMapper();
+                try {
+                    ploggingData = om.readValue(ploggingDataStr, PloggingData.class);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Log.println(Log.INFO, "MAP", ploggingData.toString());
+            }
             LatLng cbnu = new LatLng(36.62827, 127.458843);
-            googleMap.addMarker(new MarkerOptions().position(cbnu).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cbnu, 16));
+            googleMap.addMarker(new MarkerOptions().position(cbnu).title("Marker in CBNU"));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cbnu, 5));
+
+            List<LatLng> latLngList = new ArrayList<>();
+            if(ploggingData != null) {
+                ploggingData.latLngList.forEach(o ->
+                        {
+                            latLngList.add(new LatLng(o.latitude, o.logitude));
+                        }
+                );
+
+                // Storing it inside array of strings
+                LatLng[] arr = new LatLng[latLngList.size()];
+                arr = latLngList.toArray(new LatLng[0]);
+
+                // Converting ArrayList to Array
+                // using get() method
+//                for (int i = 0; i < latLngList.size(); i++)
+//                    arr[i] = latLngList.get(i);
+
+
+
+
+
+                Polyline polyline1 = googleMap.addPolyline(new PolylineOptions()
+                        .clickable(true)
+                        .add(arr)
+                );
+
+//                latLngList.get(0);
+                googleMap.addMarker(new MarkerOptions().position(latLngList.get(0)).title("시작"));
+                googleMap.addMarker(new MarkerOptions().position(latLngList.get(latLngList.size()-1)).title("종료"));
+                googleMap.addPolyline(new PolylineOptions().add(arr));
+            }
         }
     };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ObjectMapper om = new ObjectMapper();
+        if(this.getArguments()!= null) {
+            if (this.getArguments().getString("ploggingData") != null) {
+                ploggingDataStr = this.getArguments().getString("ploggingData");
+            }
+        }
     }
 
     @Override
