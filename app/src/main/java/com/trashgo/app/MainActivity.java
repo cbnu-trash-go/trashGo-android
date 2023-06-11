@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void noticeClick(View v) {
-        Intent intent = new Intent(MainActivity.this, activity_noticeupdate.class);
+        Intent intent = new Intent(MainActivity.this, NoticeUpdateActivity.class);
         startActivity(intent);
     }
     public void withdrawalClick(View v) {
