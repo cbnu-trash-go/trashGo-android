@@ -14,6 +14,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +37,7 @@ public class PloggingActivity extends AppCompatActivity {
     Chronometer chronometer;
     Button btnStop;
     Location location;
+    TextView tv3;
 
     LocationManager lm;
     PloggingData ploggingData;
@@ -59,6 +61,8 @@ public class PloggingActivity extends AppCompatActivity {
 
         btnStop = findViewById(R.id.btnStop);
         btnStop.setOnClickListener(view -> stopPlogging());
+
+        tv3 = findViewById(R.id.textView3);
 
         ploggingData = new PloggingData();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -106,6 +110,7 @@ public class PloggingActivity extends AppCompatActivity {
             Log.println(Log.INFO, provider + "위치", longitude + " " + latitude);
             PloggingData.Coordiante coordinate = new PloggingData.Coordiante(latitude, longitude);
             ploggingData.latLngList.add(coordinate);
+            tv3.setText("latitude : " + coordinate.latitude + ", longitude : " + coordinate.logitude );
         }
     };
 
