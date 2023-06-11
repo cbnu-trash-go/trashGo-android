@@ -13,6 +13,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -102,7 +105,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity_noticeupdate"
+            android:name=".NoticeUpdateActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -114,10 +117,23 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity> <!-- sohenney LoadingActivity 등록 -->
+        </activity>
         <activity
-            android:name=".LoadingActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+            android:name=".aiActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ObjectDetectionActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
+        </activity>
+        <!--sohenney LoadingActivity 등록-->
+        <activity android:name=".LoadingActivity"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
     </application>
 
 </manifest>

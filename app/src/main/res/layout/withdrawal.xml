@@ -45,20 +45,23 @@
                     android:text="회원 탈퇴"
                     android:textSize="24sp"
                     android:textColor="@color/black"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnwithdrawal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
                     android:text="탈퇴하기"
-                    android:background="@color/teal_700" /> <!--추후 색상 변경-->
+                    android:background="@drawable/solid_button"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="경고: ~~~" />
+                    android:text="경고:   회원 탈퇴 시, 앱 내 모든 데이터가 손실될 우려가 있습니다." />
 
             </LinearLayout>
 
