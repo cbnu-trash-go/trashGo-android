@@ -29,7 +29,7 @@ import com.trashgo.app.fragment.TreeFragment;
  * bottomNavigation(하단 메뉴바) 적용 - pkdgood
  */
 public class MainActivity extends AppCompatActivity {
-    private Fragment treeFragment, mapsFragment, communityFragment, myPageFragment, comuwriteFragment;
+    private Fragment treeFragment, mapsFragment, communityFragment, myPageFragment, comuwriteFragment, CommunityFragment;
 
     FrameLayout frameLayout;
     BottomNavigationView bottomNavigationView;
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         communityFragment = new CommunityFragment();
         myPageFragment = new MyPageFragment();
         comuwriteFragment = new ComuWriteFragment();
+        CommunityFragment = new CommunityFragment();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, treeFragment).commit();
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -92,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
         if(index == 1){
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.framelayout, comuwriteFragment).commit();
+        }else if(index == 2){
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.framelayout, CommunityFragment).commit();
         }
 
     }
