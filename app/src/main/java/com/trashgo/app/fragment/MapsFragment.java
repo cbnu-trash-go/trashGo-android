@@ -20,7 +20,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -37,6 +39,7 @@ import java.util.List;
 
 /**
  * 구글맵 추가 - pkdgood
+ * 커스텀 핀, 경로 그리기 - pkdgood
  */
 public class MapsFragment extends Fragment {
 
@@ -65,8 +68,6 @@ public class MapsFragment extends Fragment {
                 Log.println(Log.INFO, "MAP", ploggingData.toString());
             }
             LatLng cbnu = new LatLng(36.62827, 127.458843);
-            googleMap.addMarker(new MarkerOptions().position(cbnu).title("Marker in CBNU"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cbnu, 5));
 
             List<LatLng> latLngList = new ArrayList<>();
             if(ploggingData != null) {
@@ -95,9 +96,17 @@ public class MapsFragment extends Fragment {
                 );
 
 //                latLngList.get(0);
-//                googleMap.addMarker(new MarkerOptions().position(latLngList.get(0)).title("시작"));
-//                googleMap.addMarker(new MarkerOptions().position(latLngList.get(latLngList.size()-1)).title("종료"));
-//                googleMap.addPolyline(new PolylineOptions().add(arr));
+
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(36.6259, 127.4543)).title("줍줍!").icon(BitmapDescriptorFactory.fromResource(R.drawable.empty_trash_64)));
+                googleMap.addMarker(new MarkerOptions().position(latLngList.get(0)).title("출발"));
+                googleMap.addMarker(new MarkerOptions().position(latLngList.get(latLngList.size()-1)).title("도착"));
+                googleMap.addPolyline(new PolylineOptions().add(arr));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
+                        new LatLng((latLngList.get(0).latitude + latLngList.get(latLngList.size()-1).latitude)/2,
+                                (latLngList.get(0).longitude + latLngList.get(latLngList.size()-1).longitude)/2), 15));
+            } else {
+                googleMap.addMarker(new MarkerOptions().position(cbnu).title("Marker in CBNU"));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cbnu, 15));
             }
         }
     };

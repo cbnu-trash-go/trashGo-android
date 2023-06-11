@@ -1,4 +1,7 @@
 package com.trashgo.app;
+
+import android.content.res.Resources;
+
 /*by dotom*/
 public class ploggingDataRecyclerViewItem {
     private String mImgName;

@@ -24,7 +24,7 @@ import java.sql.Array;
 import java.util.ArrayList;
 
 /**
- * A fragment representing a list of Items.
+ * 생성 - pkdgood
  */
 /** 커뮤니티 By dotom*/
 public class CommunityFragment extends Fragment {

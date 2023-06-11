@@ -1,7 +1,5 @@
 package com.trashgo.app.Model;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 생성 - pkdgood
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -11,9 +11,7 @@ import android.view.ViewGroup;
 import com.trashgo.app.R;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link MyPageLoginFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * 생성 - pkdgood
  */
 public class MyPageLoginFragment extends Fragment {
 

@@ -37,6 +37,7 @@ import java.io.IOException;
 
 /**
  * bottomNavigation(하단 메뉴바) 적용 - pkdgood
+ * ploggingActivity 콜백 적용 - pkdgood
  */
 public class MainActivity extends AppCompatActivity {
     private Fragment treeFragment, mapsFragment, communityFragment, myPageFragment, comuwriteFragment, CommunityFragment;
@@ -158,20 +159,20 @@ public class MainActivity extends AppCompatActivity {
             Log.println(Log.INFO, "MAIN ACTIVITY", "CALLBACK");
         }
 
-//        String dd = "{\"latLngList\":[{\"latitude\":36.6257,\"logitude\":127.4517},{\"latitude\":36.6256,\"logitude\":127.4542},{\"latitude\":36.6276,\"logitude\":127.4589}],\"name\":null,\"picList\":[],\"ploggingDt\":null}";
+        String dd = "{\"latLngList\":[{\"latitude\":36.6254,\"logitude\":127.4545},{\"latitude\":36.6255,\"logitude\":127.4550},{\"latitude\":36.6256,\"logitude\":127.4550},{\"latitude\":36.6258,\"logitude\":127.4550},{\"latitude\":36.6258,\"logitude\":127.4547},{\"latitude\":36.6258,\"logitude\":127.4545},{\"latitude\":36.6258,\"logitude\":127.4544},{\"latitude\":36.6259,\"logitude\":127.4543},{\"latitude\":36.6261,\"logitude\":127.4543},{\"latitude\":36.6262,\"logitude\":127.4543},{\"latitude\":36.6262,\"logitude\":127.4539},{\"latitude\":36.6263,\"logitude\":127.4535},{\"latitude\":36.6263,\"logitude\":127.4529},{\"latitude\":36.6264,\"logitude\":127.4528},{\"latitude\":36.6265,\"logitude\":127.4528},{\"latitude\":36.6265,\"logitude\":127.4526},{\"latitude\":36.6265,\"logitude\":127.4521},{\"latitude\":36.6267,\"logitude\":127.4517},{\"latitude\":36.6267,\"logitude\":127.4514},{\"latitude\":36.6268,\"logitude\":127.4511}],\"name\":null,\"picList\":[],\"ploggingDt\":null}";
 
-        String dd = null;
-        try {
-            FileInputStream infs = openFileInput("plogging.json");
-            byte[] txt = new byte[1024];
-            infs.read(txt);
-            infs.close();
-            dd = (new String(txt)).trim();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        String dd = null;
+//        try {
+//            FileInputStream infs = openFileInput("plogging.json");
+//            byte[] txt = new byte[1024];
+//            infs.read(txt);
+//            infs.close();
+//            dd = (new String(txt)).trim();
+//        } catch (FileNotFoundException e) {
+//            throw new RuntimeException(e);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
         Bundle bundle = new Bundle();
         bundle.putString("ploggingData", dd);
         mapsFragment = new MapsFragment();

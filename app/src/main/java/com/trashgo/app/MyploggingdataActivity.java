@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+
 import java.util.ArrayList;
 /*by dotom*/
 public class MyploggingdataActivity extends AppCompatActivity {
@@ -25,9 +27,11 @@ public class MyploggingdataActivity extends AppCompatActivity {
 
         firstInit();
 
-        for(int i=0;i<5;i++){
-            addItem("iconName", "dotom" + i);
-        }
+//        for(int i=0;i<5;i++){
+//            addItem("iconName", "dotom" + i);
+//        }
+
+        addItem("쓰레기", "위경도\n36.6259, 127.4543");
 
         mRecyclerViewAdapter = new RecyclerViewAdapter(mList);
         mRecyclerView.setAdapter(mRecyclerViewAdapter);

@@ -14,6 +14,9 @@ import androidx.fragment.app.Fragment;
 import com.trashgo.app.NoticeUpdateActivity;
 import com.trashgo.app.R;
 
+/**
+ * 생성 - pkdgood
+ */
 public class NoticeUpdateFragment extends Fragment {
 
     Button mbtn_url;
