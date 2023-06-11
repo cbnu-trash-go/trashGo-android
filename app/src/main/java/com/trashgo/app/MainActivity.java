@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             intent = new Intent();
             if (!notificationManager.isNotificationPolicyAccessGranted()) {
                 intent = new Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS);
-                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
                 startActivity(intent);
             }
         }
@@ -135,9 +135,13 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 30){
             if (!Environment.isExternalStorageManager()){
                 Intent intent = new Intent(MainActivity.this, PloggingActivity.class);
-//                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
                 startActivityForResult(intent, 1);
             }
+        } else {
+            Intent intent = new Intent(MainActivity.this, PloggingActivity.class);
+//                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+            startActivityForResult(intent, 1);
         }
 
         Log.println(Log.INFO, "MAIN ACTIVITY", "HI");

@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -44,7 +45,7 @@ public class PloggingActivity extends AppCompatActivity {
 
     Intent intent;
 
-    private FusedLocationProviderClient fusedLocationClient;
+//    private FusedLocationProviderClient fusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,7 @@ public class PloggingActivity extends AppCompatActivity {
         tv3 = findViewById(R.id.textView3);
 
         ploggingData = new PloggingData();
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+//        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         String[] permission = {
                 android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -82,14 +83,14 @@ public class PloggingActivity extends AppCompatActivity {
         }
 
         // fusedLocationClient 사용
-        fusedLocationClient.getLastLocation()
-                .addOnSuccessListener(this, location -> {
-                    // Got last known location. In some rare situations this can be null.
-                    if (location != null) {
-                        LatLng mLatLng = new LatLng(location.getLatitude(), location.getLongitude());
-                        Log.println(Log.INFO, "위치", mLatLng.toString());
-                    }
-                });
+//        fusedLocationClient.getLastLocation()
+//                .addOnSuccessListener(this, location -> {
+//                    // Got last known location. In some rare situations this can be null.
+//                    if (location != null) {
+//                        LatLng mLatLng = new LatLng(location.getLatitude(), location.getLongitude());
+//                        Log.println(Log.INFO, "위치", mLatLng.toString());
+//                    }
+//                });
 
 
         // LocationManager 사용
@@ -111,6 +112,20 @@ public class PloggingActivity extends AppCompatActivity {
             PloggingData.Coordiante coordinate = new PloggingData.Coordiante(latitude, longitude);
             ploggingData.latLngList.add(coordinate);
             tv3.setText("latitude : " + coordinate.latitude + ", longitude : " + coordinate.logitude );
+        }
+        @Override
+        public void onProviderEnabled(@NonNull String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(@NonNull String provider) {
+
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
         }
     };
 
