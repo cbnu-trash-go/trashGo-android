@@ -1,5 +1,6 @@
 package com.trashgo.app.fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 
+import com.trashgo.app.MainActivity;
 import com.trashgo.app.R;
 import com.trashgo.app.aiActivity;
 
@@ -38,6 +40,7 @@ public class ComuWriteFragment extends Fragment {
     Button uploadbutton;
     EditText title;
     MultiAutoCompleteTextView content;
+    MainActivity mainActivity;
     static CommunityFragment item = new CommunityFragment();
     public ComuWriteFragment() {
         // Required empty public constructor
@@ -63,6 +66,12 @@ public class ComuWriteFragment extends Fragment {
     }
 
     @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        mainActivity = (MainActivity) getActivity();
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
@@ -84,6 +93,11 @@ public class ComuWriteFragment extends Fragment {
             public void onClick(View view) {
 
                 item.addItem(title.getText().toString(), content.getText().toString());
+                title.setText("");
+                content.setText("");
+
+                mainActivity.fragmentChange(2);
+
 
             }
 
