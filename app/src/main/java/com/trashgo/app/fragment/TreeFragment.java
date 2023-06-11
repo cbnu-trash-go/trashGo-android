@@ -154,10 +154,10 @@ public class TreeFragment extends Fragment {
 
     private void initializeButtonTexts() {
         buttonTexts = new ArrayList<>();
-        buttonTexts.add("쓰래기3개이상 줍기");
+        buttonTexts.add("쓰레기 3개 이상 줍기");
         buttonTexts.add("분리 수거하기");
         buttonTexts.add("친구랑 플로깅하기");
-        buttonTexts.add("쓰래기 1kg줍기");
+        buttonTexts.add("쓰레기 1kg줍기");
         buttonTexts.add("더러워진 손씻기");
         buttonTexts.add("플로깅 30분이상하기");
         Collections.shuffle(buttonTexts); // 텍스트를 섞음
